@@ -17,7 +17,7 @@ export BUILD_OTHER_DIR="build_script_for_other"
 # BASE
 export KERNEL_BRANCH="5.x" 
 export KERNEL_VERSION="5.4.1"
-export BUSYBOX_VERSION="1.30.1"
+export BUSYBOX_VERSION="1.31.1"
 export UBOOT_VERSION="2019.10.03"
 
 # EXTRAS
@@ -78,7 +78,7 @@ build_kernel () {
 
     if [ ! -d linux-$KERNEL_VERSION ] 
     then
-    	if [ -f linux-$KERNEL_VERSION.xz ]
+    	if [ -f linux-$KERNEL_VERSION.tar.xz ]
     	then
 		tar -xf linux-$KERNEL_VERSION.tar.xz
     	fi
@@ -104,9 +104,9 @@ build_busybox () {
     cd ${SOURCEDIR}/busybox
 
 
-    if [ ! -d busybox-$BUSYBOX_VERSION
+    if [ ! -d busybox-$BUSYBOX_VERSION ]
     then
-        if [ -f busybox-$BUSYBOX_VERSION.xz ]
+        if [ -f busybox-$BUSYBOX_VERSION.tar.bz2 ]
         then
                 tar -xf busybox-$BUSYBOX_VERSION.tar.bz2
         fi
@@ -137,8 +137,6 @@ build_busybox () {
 build_uboot () {
 	cd $SOURCEDIR/uboot
         
-	ls ./
-	
 	if [ ! -d uboot-$UBOOT_VERSION ]
     	then
         	if [ -f uboot-$UBOOT_VERSION.tar.bz2 ]
