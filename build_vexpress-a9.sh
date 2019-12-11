@@ -48,7 +48,7 @@ else
 fi
 
 #export CROSS_COMPILE=$BASEDIR/cross-gcc/arm-linux-gnueabihf/bin/$CROSS_GCC
-export CROSS_COMPILE=$BASEDIR/cross-gcc-8.3/bin/$CROSS_GCC
+export CROSS_COMPILE=$BASEDIR/gcc-arm-8.3-arm-eabi/bin/$CROSS_GCC
 
 }
 
