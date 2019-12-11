@@ -1,3 +1,6 @@
 [submodule "ACRLINUX-SOURCE"]
 	path = ACRLINUX-SOURCE
 	url = https://github.com/acrlinux/ACRLINUX-SOURCE.git
+[submodule "cross-gcc-arm"]
+	path = cross-gcc-arm
+	url = https://gitlab.com/arjuncr00/cross-gcc-arm.git

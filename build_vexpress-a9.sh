@@ -25,8 +25,7 @@ export NCURSES_VERSION="6.1"
 
 # CROSS COMPILE
 export ARCH="arm"
-#export CROSS_GCC="arm-linux-gnueabihf-"
-export CROSS_GCC="arm-eabi-"
+export CROSS_GCC="arm-linux-gnueabi-"
 export MCPU="cortex-a9"
 
 export BASEDIR=`realpath --no-symlinks $PWD`
@@ -47,8 +46,7 @@ else
         export JFLAG=$2
 fi
 
-#export CROSS_COMPILE=$BASEDIR/cross-gcc/arm-linux-gnueabihf/bin/$CROSS_GCC
-export CROSS_COMPILE=$BASEDIR/gcc-arm-8.3-arm-eabi/bin/$CROSS_GCC
+export CROSS_COMPILE=$BASEDIR/cross-gcc-arm/gcc-arm-8.2-x86_64-arm-linux-gnueabicross-gcc-arm/bin/$CROSS_GCC
 
 }
 
@@ -91,7 +89,7 @@ build_kernel () {
     	make clean -j$JFLAG ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE
     elif [ "$1" == "-b" ]
     then	    
-    	make -j$JFLAG ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE vexpress_ca9x4_defconfig
+    	make -j$JFLAG ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE vexpress_defconfig
     	make -j$JFLAG  ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE zImage modules
     
     	make modules_install
