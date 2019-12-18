@@ -46,7 +46,7 @@ else
         export JFLAG=$2
 fi
 
-export CROSS_COMPILE=$BASEDIR/cross-gcc-arm/gcc-arm-8.2-x86_64-arm-linux-gnueabicross-gcc-arm/bin/$CROSS_GCC
+export CROSS_COMPILE=$BASEDIR/cross-gcc-arm/gcc-arm-8.2-x86_64-arm-linux-gnueabi/bin/$CROSS_GCC
 
 }
 
