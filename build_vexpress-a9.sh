@@ -8,9 +8,9 @@ int_build_env()
 {
 
 export SCRIPT_NAME="ACR OS"
-export SCRIPT_VERSION="1.0"
+export SCRIPT_VERSION="1.1"
 export LINUX_NAME="acr-linux"
-export DISTRIBUTION_VERSION="2019.12"
+export DISTRIBUTION_VERSION="2029.4"
 export IMAGE_NAME="minimal-acrlinux-qemu-${SCRIPT_VERSION}.img"
 export BUILD_OTHER_DIR="build_script_for_other"
 
@@ -118,7 +118,7 @@ build_busybox () {
     elif [ "$1" == "-b" ]
     then	    
     	make -j$JFLAG ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE defconfig
-    sed -i 's|.*CONFIG_STATIC.*|CONFIG_STATIC=y|' .config
+    	sed -i 's|.*CONFIG_STATIC.*|CONFIG_STATIC=y|' .config
     	make  ARCH=$arm CROSS_COMPILE=$CROSS_COMPIL busybox \
         	-j ${JFLAG}
 
@@ -126,7 +126,7 @@ build_busybox () {
         	-j ${JFLAG}
 
     	rm -rf ${ROOTFSDIR} && mkdir ${ROOTFSDIR}
-    cd _install
+    	cd _install
     	cp -R . ${ROOTFSDIR}
     	rm  ${ROOTFSDIR}/linuxrc
     fi
