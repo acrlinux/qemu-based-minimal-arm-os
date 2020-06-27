@@ -35,9 +35,6 @@ export IMGDIR=${BASEDIR}/img
 export RPI_KERNEL_DIR=${BASEDIR}/linux
 export CONFIG_ETC_DIR="${BASEDIR}/os-configs/etc"
 
-#export CFLAGS=-m64
-#export CXXFLAGS=-m64
-
 #setting JFLAG
 if [ -z "$2" ]
 then
@@ -449,10 +446,10 @@ fi
 
 main()
 {
-int_build_env
+int_build_env $2 $3
 init_work_dir
 option $1
 }
 
 #starting of script
-main $1 
+main $1 $2 $3
