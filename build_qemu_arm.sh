@@ -258,7 +258,7 @@ echo "not implemented"
 
 test_qemu () {
     cd ${BASEDIR}
-	qemu-system-arm -machine virt -bios $IMGDIR/bootloader/uboot
+	qemu-system-arm -machine virt -nographic -bios $IMGDIR/bootloader/uboot
 }
 
 clean_files () {
