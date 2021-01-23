@@ -147,7 +147,7 @@ build_uboot () {
 		make -j$JFLAG ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE distclean
         elif [ "$1" == "-b" ]
 	then	
-		make -j$JFLAG ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE vexpress_ca9x4_defconfig
+		make -j$JFLAG ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE qemu_arm_defconfig
 		make -j$JFLAG ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE u-boot.bin
 		cp u-boot $IMGDIR/bootloader
 	else
@@ -258,7 +258,7 @@ echo "not implemented"
 
 test_qemu () {
     cd ${BASEDIR}
-	qemu-system-arm -machine vexpress-a9 -nographic -no-reboot -kernel $IMGDIR/bootloader/uboot
+	qemu-system-arm -machine virt -bios $IMGDIR/bootloader/uboot
 }
 
 clean_files () {
