@@ -69,7 +69,6 @@ prepare_dirs () {
     then
         mkdir    ${IMGDIR}
 	mkdir -p ${IMGDIR}/bootloader
-	mkdir -p ${IMGDIR}/boot
 	mkdir -p ${IMGDIR}/kernel
     fi
 }
