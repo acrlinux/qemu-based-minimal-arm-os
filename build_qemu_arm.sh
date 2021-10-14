@@ -156,7 +156,7 @@ build_uboot () {
 	then	
 		make -j$JFLAG ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE qemu_arm_defconfig
 		make -j$JFLAG ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE u-boot.bin
-		cp u-boot $IMGDIR/bootloader
+		cp u-boot.bin $IMGDIR/bootloader
 	else
 	     echo "Command Not Supported"
         fi
@@ -252,7 +252,7 @@ echo "not implemented"
 
 test_qemu () {
     cd ${BASEDIR}
-	qemu-system-arm -machine virt -nographic -bios $IMGDIR/bootloader/uboot
+	qemu-system-arm -machine virt -nographic -bios $IMGDIR/bootloader/u-boot.bin
 }
 
 clean_files () {
