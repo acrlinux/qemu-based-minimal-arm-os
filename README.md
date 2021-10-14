@@ -39,4 +39,24 @@ Cleaning work dir: --clean-work-dir
 Test with Qemu --Run-qemu
 
 ###################################################################################
+```  
+
+
+./build_qemu_arm.sh --Run-qemu     
+
+```
+U-Boot 2019.10 (Oct 14 2021 - 23:41:24 +0530)
+
+DRAM:  128 MiB
+WARNING: Caches not enabled
+Flash: 128 MiB
+*** Warning - bad CRC, using default environment
+
+In:    pl011@9000000
+Out:   pl011@9000000
+Err:   pl011@9000000
+Net:   No ethernet found.
+Hit any key to stop autoboot:  0
+=>
+
 ```
