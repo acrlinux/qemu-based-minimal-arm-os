@@ -3,7 +3,7 @@ git clone --recurse-submodules https://github.com/acrlinux/qemu-based-minimal-ar
 
 Building:
 
-./build_vexpress-a9.sh
+./build_qemu_arm.sh
 
 ```
 #################################################################################
