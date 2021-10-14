@@ -1,4 +1,4 @@
-clone: 
+clone:    
 git clone --recurse-submodules https://github.com/acrlinux/qemu-based-minimal-arm-os.git  
 
 Building:
