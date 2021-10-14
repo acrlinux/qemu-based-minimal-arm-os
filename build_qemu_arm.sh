@@ -327,9 +327,9 @@ echo -e "Building uboot: --build-uboot --rebuild-uboot  --clean-uboot\n"
 
 echo -e "Building other soft: --build-other --rebuild-other --clean-other\n"
 
-echo -e "Creating root-fs: --create-rootfs\n"
+echo -e "Creating rootfs: --create-rootfs\n"
 
-echo -e "Create ISO Image: --create-img\n"
+echo -e "Create rom Image: --create-img\n"
 
 echo -e "Cleaning work dir: --clean-work-dir\n"
 
