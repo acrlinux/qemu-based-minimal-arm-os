@@ -30,9 +30,9 @@ Building uboot: --build-uboot --rebuild-uboot  --clean-uboot
 
 Building other soft: --build-other --rebuild-other --clean-other
 
-Creating root-fs: --create-rootfs
+Creating rootfs: --create-rootfs
 
-Create ISO Image: --create-img
+Create rom Image: --create-img
 
 Cleaning work dir: --clean-work-dir
 
