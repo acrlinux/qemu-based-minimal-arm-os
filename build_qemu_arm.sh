@@ -13,10 +13,11 @@ export LINUX_NAME="acr-linux"
 export DISTRIBUTION_VERSION="2029.4"
 export IMAGE_NAME="minimal-acrlinux-qemu-${SCRIPT_VERSION}.img"
 export BUILD_OTHER_DIR="build_script_for_other"
+export BOOT_SCRIPT_DIR="boot_script"
 
 # BASE
 export KERNEL_BRANCH="5.x" 
-export KERNEL_VERSION="5.4.1"
+export KERNEL_VERSION="5.10.73"
 export BUSYBOX_VERSION="1.31.1"
 export UBOOT_VERSION="2019.10"
 
@@ -34,6 +35,12 @@ export ROOTFSDIR=${BASEDIR}/rootfs
 export IMGDIR=${BASEDIR}/img
 export RPI_KERNEL_DIR=${BASEDIR}/linux
 export CONFIG_ETC_DIR="${BASEDIR}/os-configs/etc"
+
+#Dir and mode
+export ETCDIR="etc"
+export MODE="754"
+export DIRMODE="755"
+export CONFMODE="644"
 
 #setting JFLAG
 if [ -z "$2" ]
@@ -200,25 +207,12 @@ generate_rootfs () {
     cp $CONFIG_ETC_DIR/resolv.conf .
 
     cp $CONFIG_ETC_DIR/fstab .
-
-    rm -r init.d/*
-
-    install -m ${CONFMODE} ${BASEDIR}/${BOOT_SCRIPT_DIR}/rc.d/init.d/functions     init.d/functions
-    install -m ${CONFMODE} ${BASEDIR}/${BOOT_SCRIPT_DIR}/rc.d/init.d/network	   init.d/network
+ 	 
     install -m ${MODE}     ${BASEDIR}/${BOOT_SCRIPT_DIR}/rc.d/startup              rcS.d/S01startup
     install -m ${MODE}     ${BASEDIR}/${BOOT_SCRIPT_DIR}/rc.d/shutdown             init.d/shutdown
 
     chmod +x init.d/*
 
-    ln -s init.d/network   rc0.d/K01network
-    ln -s init.d/network   rc1.d/K01network
-    ln -s init.d/network   rc2.d/S01network
-    ln -s init.d/network   rc3.d/S01network
-    ln -s init.d/network   rc4.d/S01network
-    ln -s init.d/network   rc5.d/S01network
-    ln -s init.d/network   rc6.d/K01network
-    ln -s init.d/network   rcS.d/S01network
-	
     cp $CONFIG_ETC_DIR/inittab .
 
     cp $CONFIG_ETC_DIR/group .
