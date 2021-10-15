@@ -248,7 +248,7 @@ generate_rootfs () {
 generate_image () {
 	mkimage -A arm -O linux -T kernel -C none -a 0x80008000 -e 0x80008000 -n "Linux kernel" -d $IMGDIR/kernel/qemu-kernel.img $IMGDIR/kernel/uImage
 
-	mkimage -A arm64 -O linux -T ramdisk -C gzip -d $IMGDIR/rootfs.gz $IMGDIR/initramfs.uImage
+	mkimage -A arm -O linux -T ramdisk -C gzip -d $IMGDIR/rootfs.gz $IMGDIR/initramfs.uImage
 
 }
 
